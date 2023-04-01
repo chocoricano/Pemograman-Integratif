@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package data;
+
+service UserManagement {
+    rpc createNewUser (User) returns (User) {}
+    rpc getUser (UserRequest) returns (User) {}
+    rpc updateUserDetails (User) returns (User) {}
+    rpc removeUser (UserRequest) returns (User) {}
+}
+
+message User {
+    string name = 1;
+    int32 absenNumber = 2;
+    float mathScore = 3;
+    float physicsScore = 4;
+    float biologyScore = 5;
+}
+
+message UserRequest {
+    int32 id = 1;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package data;
+
+service UserData {
+    rpc CreateUser (User) returns (User) {}
+    rpc ReadUser (UserRequest) returns (User) {}
+    rpc UpdateUser (User) returns (User) {}
+    rpc DeleteUser (UserRequest) returns (User) {}
+}
+
+message User {
+    string name = 1;
+    string address = 2;
+    int32 age = 3;
+    string gender = 4;
+}
+
+message UserRequest {
+    int32 id = 1;
+}
