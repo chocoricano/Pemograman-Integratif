@@ -7,16 +7,26 @@ service UserManagement {
     rpc getUser (UserRequest) returns (User) {}
     rpc updateUserDetails (User) returns (User) {}
     rpc removeUser (UserRequest) returns (User) {}
+    rpc getAll (Empty) returns (UserList) {}
 }
 
 message User {
-    string name = 1;
-    int32 absenNumber = 2;
-    float mathScore = 3;
-    float physicsScore = 4;
-    float biologyScore = 5;
+    int32 id = 1;
+    string name = 2;
+    int32 absenNumber = 3;
+    float mathScore = 4;
+    float physicsScore = 5;
+    float biologyScore = 6;
 }
 
 message UserRequest {
     int32 id = 1;
+}
+
+message Empty {
+
+}
+
+message UserList {
+    repeated User users = 1;
 }
