@@ -47,6 +47,7 @@ function getUser(call, callback) {
   });
 }
 
+/* Implementasi fungsi untuk mendapatkan user yang tersimpan dalam database*/
 function getAll(call, callback) {
   dbConnection.query("SELECT * FROM users", (err, results) => {
     if (err) throw err;
